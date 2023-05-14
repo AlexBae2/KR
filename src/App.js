@@ -1,25 +1,24 @@
+import {useRoutes} from "react-router";
+import {GlobalStyle, SectionInner, Wrapper} from "./App.styles";
+import Header from "./components/header";
+import Navbar from "./components/NavBar";
 import logo from './logo.svg';
-import './App.css';
+import {routes} from "./routes/routes";
 
-function App() {
+const App = () => {
+  const publicRoutes = useRoutes(routes())
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <GlobalStyle></GlobalStyle>
+          <Header/>
+          <SectionInner>
+            <Wrapper>
+                <Navbar/>
+              {publicRoutes}
+            </Wrapper>
+          </SectionInner>
+      </>
   );
-}
+};
 
 export default App;
