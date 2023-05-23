@@ -15,6 +15,7 @@ export const HeaderMiddleWrapper = styled.div`
 
 export const HeaderBottomWrapper = styled.div`
     margin-bottom: 4rem;
+  margin-right: 1rem;
 `
 
 export const HeaderBottomElement = styled.p`
